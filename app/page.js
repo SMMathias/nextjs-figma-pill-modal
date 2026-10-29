@@ -7,14 +7,17 @@ export default function Home() {
       <h1>Components</h1>
       <div className={styles.pills}>
         <PillModal
+          type="primary"
           label="Hick's Law"
           title="Hick's Law"
           text="Jo flere valgmuligheder, jo længere tid tager det at vælge."
         />
         <PillModal
+          type="secondary"
           label="Fitts's Law"
           title="Fitts's Law"
           text="Jo større og tættere et mål er, jo hurtigere er det at ramme."
+          showSeparator={false}
         />
       </div>
     </main>

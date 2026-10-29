@@ -10,7 +10,6 @@
   border: 1px solid var(--color-neutral-grey-200);
   border-radius: var(--border-radius-full);
   background: var(--color-neutral-white);
-  color: var(--color-neutral-grey-900);
   font-family: inherit;
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
@@ -18,9 +17,26 @@
   cursor: pointer;
 }
 
-/* Type=Primary and Type=Secondary -> one class per type (step 1.4) */
+/* Type=Primary and Type=Secondary -> one class per type */
+.primary {
+  color: var(--color-primary);
+}
 
-/* State=Hover -> :hover and :focus-visible (step 1.4) */
+.secondary {
+  color: var(--color-neutral-grey-900);
+}
+
+/* State=Hover -> :hover and :focus-visible */
+.primary:hover,
+.primary:focus-visible {
+  border-color: var(--color-primary);
+}
+
+.secondary:hover,
+.secondary:focus-visible {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
 
 .pill:focus-visible {
   outline: 2px solid currentColor;

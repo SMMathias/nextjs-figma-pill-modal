@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import styles from "./Modal.module.css";
 
-// Figma: the component "Modal".
-export default function Modal({ isOpen, onClose, title, text }) {
+// Figma: the component "Modal" with the boolean property showSeparator.
+export default function Modal({ isOpen, onClose, title, text, showSeparator = true }) {
   const dialogRef = useRef(null);
 
   // showModal() gives focus handling, Esc and a backdrop. The open attribute alone does not.
@@ -26,6 +26,7 @@ export default function Modal({ isOpen, onClose, title, text }) {
   return (
     <dialog ref={dialogRef} className={styles.modal} aria-label={title} onClose={onClose} onClick={handleClick}>
       <div className={styles.content}>
+        {showSeparator && <hr className={styles.separator} />}
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.text}>{text}</p>
       </div>

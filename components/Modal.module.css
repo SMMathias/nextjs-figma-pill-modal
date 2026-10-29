@@ -25,7 +25,15 @@
   padding: var(--paddings-lg);
 }
 
-/* Title and text. The separator comes in step 1.4 */
+/* Separator, title and text */
+.separator {
+  width: 40px;
+  height: 5px;
+  border: none;
+  border-radius: 3px;
+  background: var(--color-primary);
+}
+
 .title {
   color: var(--color-neutral-grey-900);
   font-size: var(--font-size-lg);

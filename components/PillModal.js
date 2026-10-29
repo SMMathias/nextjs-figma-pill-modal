@@ -6,13 +6,21 @@ import Pill from "./Pill";
 
 // Figma: the prototype interaction. PillModal puts Pill and Modal together,
 // and its state remembers if the modal is open.
-export default function PillModal({ label, title, text }) {
+export default function PillModal({ type, label, title, text, showSeparator }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <Pill onClick={() => setIsOpen(true)}>{label}</Pill>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title={title} text={text} />
+      <Pill type={type} onClick={() => setIsOpen(true)}>
+        {label}
+      </Pill>
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title={title}
+        text={text}
+        showSeparator={showSeparator}
+      />
     </>
   );
 }
