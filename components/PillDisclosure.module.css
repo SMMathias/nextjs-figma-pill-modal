@@ -1,0 +1,41 @@
+/* Figma: the variant Open. Closed, the item is only the pill. Open, it becomes a card around the pill.
+   align-self keeps the item at the top, so the other pills do not move down when a card opens. */
+.item {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: flex-start;
+  gap: var(--gaps-md);
+}
+
+/* The card gets the same border as the pill, so the pill looks like it grows into the card */
+.open {
+  width: 500px;
+  max-width: 100%;
+  padding: var(--paddings-lg);
+  border: 1px solid var(--color-neutral-grey-200);
+  border-radius: var(--border-radius-md);
+  background: var(--color-neutral-white);
+}
+
+/* The same content as in the modal */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gaps-md);
+}
+
+.separator {
+  width: 40px;
+  height: 5px;
+  border: none;
+  border-radius: 3px;
+  background: var(--color-primary);
+}
+
+.text {
+  color: var(--color-neutral-grey-800);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: 25px;
+}

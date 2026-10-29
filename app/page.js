@@ -1,3 +1,4 @@
+import PillDisclosure from "@/components/PillDisclosure";
 import PillModal from "@/components/PillModal";
 import styles from "./page.module.css";
 
@@ -31,6 +32,7 @@ export default function Home() {
   return (
     <main className={styles.page}>
       <h1>Components</h1>
+      <h2>Som modal</h2>
       <div className={styles.pills}>
         {laws.map((law) => (
           <PillModal
@@ -39,6 +41,20 @@ export default function Home() {
             size={law.size}
             label={law.title}
             title={law.title}
+            text={law.text}
+            showSeparator={law.showSeparator}
+          />
+        ))}
+      </div>
+      {/* Extra 3b: the same pills, but they open where they are and make room */}
+      <h2>På stedet</h2>
+      <div className={styles.pills}>
+        {laws.map((law) => (
+          <PillDisclosure
+            key={law.title}
+            type={law.type}
+            size={law.size}
+            label={law.title}
             text={law.text}
             showSeparator={law.showSeparator}
           />
