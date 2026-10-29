@@ -1,5 +1,4 @@
-import Modal from "@/components/Modal";
-import Pill from "@/components/Pill";
+import PillModal from "@/components/PillModal";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -7,10 +6,21 @@ export default function Home() {
     <main className={styles.page}>
       <h1>Components</h1>
       <div className={styles.pills}>
-        <Pill />
+        <PillModal
+          type="primary"
+          label="Primary"
+          title="Hick's Law"
+          text="Jo flere valgmuligheder, jo længere tid tager det at vælge."
+          showSeparator={true}
+        />
+        <PillModal
+          type="secondary"
+          label="Secondary"
+          title="Hick's Law"
+          text="Jo flere valgmuligheder, jo længere tid tager det at vælge."
+          showSeparator={false}
+        />
       </div>
-      {/* A closed <dialog> is hidden. Give it isOpen to see it in step 1.1. From step 1.2, PillModal opens it. */}
-      <Modal />
     </main>
   );
 }
