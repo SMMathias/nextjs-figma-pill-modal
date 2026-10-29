@@ -7,10 +7,10 @@ export default function Home() {
     <main className={styles.page}>
       <h1>Components</h1>
       <div className={styles.pills}>
-        <Pill />
+        <Pill>Primary</Pill>
       </div>
-      {/* A closed <dialog> is hidden. You will see the modal once a pill can open it. */}
-      <Modal />
+      {/* Add isOpen to see the modal right away. In step 1.2, PillModal opens it. */}
+      <Modal title="Hick's Law" text="Jo flere valgmuligheder, jo længere tid tager det at vælge." />
     </main>
   );
 }
