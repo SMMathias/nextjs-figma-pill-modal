@@ -12,10 +12,6 @@
   box-shadow: 0 20px 48px -12px rgb(0 0 0 / 0.12);
 }
 
-.modal::backdrop {
-  background: rgb(22 22 26 / 0.4);
-}
-
 /* Auto layout -> flexbox */
 .content {
   display: flex;
@@ -49,4 +45,42 @@
   line-height: 25px;
 }
 
-/* Smart Animate -> transition (step 1.5) */
+/* Smart Animate -> transition. Closed is the state the modal animates from and back to. */
+.modal {
+  opacity: 0;
+  scale: 0.95;
+  transition:
+    opacity 300ms ease-out,
+    scale 300ms ease-out,
+    overlay 300ms ease-out allow-discrete,
+    display 300ms ease-out allow-discrete;
+}
+
+.modal[open] {
+  opacity: 1;
+  scale: 1;
+}
+
+.modal::backdrop {
+  background: rgb(22 22 26 / 0);
+  transition:
+    background 300ms ease-out,
+    overlay 300ms ease-out allow-discrete,
+    display 300ms ease-out allow-discrete;
+}
+
+.modal[open]::backdrop {
+  background: rgb(22 22 26 / 0.4);
+}
+
+/* Where the animation starts when the modal opens */
+@starting-style {
+  .modal[open] {
+    opacity: 0;
+    scale: 0.95;
+  }
+
+  .modal[open]::backdrop {
+    background: rgb(22 22 26 / 0);
+  }
+}
