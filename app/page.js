@@ -25,6 +25,11 @@ const laws = [
     text: "Vi kan kun holde omkring 7 (± 2) ting i arbejdshukommelsen ad gangen.",
     type: "secondary",
     size: "sm"
+  },
+  {
+    title: "RACE'S Law",
+    text: "Giv den hele armen, men gør det på en måde, der ikke forvirrer brugeren.",
+    type: "primary"
   }
 ];
 
