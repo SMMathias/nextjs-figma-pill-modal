@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Pill from "./Pill";
 import styles from "./Modal.module.css";
 
 // Figma: the component "Modal" with the boolean property showSeparator.
@@ -29,6 +30,10 @@ export default function Modal({ isOpen, onClose, title, text, showSeparator = tr
         {showSeparator && <hr className={styles.separator} />}
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.text}>{text}</p>
+        {/* Figma: a nested instance of Pill. A close button also helps on touch screens without Esc. */}
+        <Pill type="secondary" onClick={onClose}>
+          Luk
+        </Pill>
       </div>
     </dialog>
   );
