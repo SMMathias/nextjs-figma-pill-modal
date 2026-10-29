@@ -16,10 +16,19 @@ export default function Modal({ isOpen, onClose, title, text }) {
     }
   }, [isOpen]);
 
+  // A click on the backdrop hits the dialog itself. A click on the content hits the elements inside it.
+  function handleClick(event) {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  }
+
   return (
-    <dialog ref={dialogRef} className={styles.modal} aria-label={title} onClose={onClose}>
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.text}>{text}</p>
+    <dialog ref={dialogRef} className={styles.modal} aria-label={title} onClose={onClose} onClick={handleClick}>
+      <div className={styles.content}>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.text}>{text}</p>
+      </div>
     </dialog>
   );
 }
