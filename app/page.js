@@ -9,7 +9,7 @@ export default function Home() {
       <div className={styles.pills}>
         <Pill />
       </div>
-      {/* A closed <dialog> is hidden. You will see the modal once a pill can open it. */}
+      {/* A closed <dialog> is hidden. Give it isOpen to see it in step 1.1. From step 1.2, PillModal opens it. */}
       <Modal />
     </main>
   );

@@ -5,8 +5,8 @@
   margin: auto; /* The reset in globals.css removes the centering of <dialog>, so add it back */
 }
 
-/* Auto layout -> flexbox */
+/* Auto layout -> flexbox (step 1.3) */
 
-/* Separator, title and text */
+/* Title and text (step 1.3) and the separator (step 1.4) */
 
 /* Smart Animate -> transition (step 1.5) */

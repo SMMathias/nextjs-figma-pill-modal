@@ -16,6 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - `app/globals.css` – design tokens from your Figma variables
 - `components/Pill.js` – the pill as a `<button>`
 - `components/Modal.js` – the modal as a `<dialog>`
+- `components/PillModal.js` – puts Pill and Modal together (you create it in step 1.2)
 - `app/page.js` – the page that shows the components
 
-The branch `solution` has one commit per step.
+The [solution branch](https://github.com/cederdorff/nextjs-figma-pill-modal/tree/solution) in the original repo has one commit per step.
