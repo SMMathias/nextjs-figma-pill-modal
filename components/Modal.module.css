@@ -45,13 +45,16 @@
   line-height: 25px;
 }
 
-/* Smart Animate -> transition. Closed is the state the modal animates from and back to. */
+/* Smart Animate -> transition. Closed is the state the modal animates from and back to.
+   Closed, the modal is small and sits on top of the pill, so it unfolds from there. */
 .modal {
   opacity: 0;
-  scale: 0.95;
+  scale: 0.2;
+  translate: var(--origin-x) var(--origin-y);
   transition:
     opacity 300ms ease-out,
     scale 300ms ease-out,
+    translate 300ms ease-out,
     overlay 300ms ease-out allow-discrete,
     display 300ms ease-out allow-discrete;
 }
@@ -59,6 +62,7 @@
 .modal[open] {
   opacity: 1;
   scale: 1;
+  translate: 0 0;
 }
 
 .modal::backdrop {
@@ -77,10 +81,20 @@
 @starting-style {
   .modal[open] {
     opacity: 0;
-    scale: 0.95;
+    scale: 0.2;
+    translate: var(--origin-x) var(--origin-y);
   }
 
   .modal[open]::backdrop {
     background: rgb(22 22 26 / 0);
+  }
+}
+
+/* Less motion for users who have asked for it: the modal only fades */
+@media (prefers-reduced-motion: reduce) {
+  .modal,
+  .modal[open] {
+    scale: none;
+    translate: none;
   }
 }
