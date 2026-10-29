@@ -14,6 +14,7 @@ export default function Home() {
         />
         <PillModal
           type="secondary"
+          size="sm"
           label="Fitts's Law"
           title="Fitts's Law"
           text="Jo større og tættere et mål er, jo hurtigere er det at ramme."

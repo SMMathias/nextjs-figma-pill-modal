@@ -5,13 +5,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--btn-height-md);
   padding: 0 var(--paddings-sm);
   border: 1px solid var(--color-neutral-grey-200);
   border-radius: var(--border-radius-full);
   background: var(--color-neutral-white);
   font-family: inherit;
-  font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
   letter-spacing: -0.01em; /* Figma: -1% */
   cursor: pointer;
@@ -28,6 +26,17 @@
 
 .secondary {
   color: var(--color-neutral-grey-900);
+}
+
+/* Size=Small and Size=Medium -> one class per size */
+.sm {
+  height: var(--btn-height-sm);
+  font-size: var(--font-size-sm);
+}
+
+.md {
+  height: var(--btn-height-md);
+  font-size: var(--font-size-md);
 }
 
 /* State=Hover -> :hover and :focus-visible */
